@@ -2,7 +2,7 @@
 
 The FleetOps demo uses actual photographs of existing car models, **not AI-generated illustrations**. These photos do **not** depict any KODYRA-owned or rented vehicle; all vehicles, registration plates and rental records in the demo are fictional. Trim, color, generation and model year may differ from the fictional records.
 
-The following source files are each identified as **CC0 1.0 / public-domain dedicated** on their Wikimedia Commons pages. The web application requests width-limited files from Wikimedia Commons using its redirect service; no photos are claimed as KODYRA originals. Images are subject to Commons availability. A locally generated placeholder appears if loading fails.
+The following source files are each identified as **CC0 1.0 / public-domain dedicated** on their Wikimedia Commons pages. The source photographs and CC0 licenses were verified using the Commons API. Optimized JPEG copies are bundled in `assets/vehicle-photos/` and served by FleetOps itself; the browser no longer depends on Wikimedia redirects. No photos are claimed as KODYRA originals. A locally generated placeholder appears if an asset fails to load.
 
 | Fictional demo vehicle | Model photograph reference | License |
 | --- | --- | --- |

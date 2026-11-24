@@ -1,7 +1,7 @@
 import { formatMoney, quoteRental, generateBooking, updateBookingStatus, metrics, monthSeries, bookingCsv, hasBookingConflict, monthWindow, rentalDays } from './domain.js';
 import { todayLocal, offsetDay } from './demo.js';
 import { loadData, saveData, resetData } from './storage.js';
-import { demoVehiclePhoto } from './vehicle-photos.js';
+import { demoVehiclePhoto } from './vehicle-photos.js?v=2';
 
 let db = loadData();
 let page = 'overview';
@@ -225,6 +225,8 @@ document.addEventListener('error', event => {
   if (vehicle) {
     img.src=vehicleImageUrl(vehicle);
     img.alt=`Illustrative fallback preview of ${vehicle.make} ${vehicle.model}`;
+    const note=img.closest(".detail-photo-wrap")?.querySelector(".detail-photo-note");
+    if(note)note.textContent="Photo unavailable — illustrative preview";
   }
 }, true);
 renderShell();

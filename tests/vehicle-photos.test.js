@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { makeDemoData } from '../src/demo.js';
 import { DEMO_PHOTOS, demoVehiclePhoto } from '../src/vehicle-photos.js';
 
@@ -9,8 +10,13 @@ test('all ten seeded cars receive Commons photographs from CC0 sources', () => {
   assert.equal(Object.keys(DEMO_PHOTOS).length,vehicles.length);
   for(const vehicle of vehicles){
     const photo=demoVehiclePhoto(vehicle);
-    assert.ok(photo?.src.startsWith('https://commons.wikimedia.org/wiki/Special:Redirect/file/'),vehicle.id);
-    assert.match(photo.src,/\?width=960$/);
+    assert.equal(photo?.src,`/assets/vehicle-photos/${vehicle.id}.jpg`);
+    const bytes=readFileSync(new URL(`..${photo.src}`,import.meta.url));
+    assert.ok(bytes.length>1000);
+    assert.equal(bytes[0],0xff);
+    assert.equal(bytes[1],0xd8);
+    assert.equal(bytes[bytes.length-2],0xff);
+    assert.equal(bytes[bytes.length-1],0xd9);
     assert.match(photo.source,/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);
     assert.equal(photo.license,'CC0 1.0');
   }

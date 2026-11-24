@@ -30,6 +30,6 @@ test('vehicle detail UX keeps operational controls and honest image labels', () 
 
 test('photographic thumbnails are permitted by the Content Security Policy', () => {
   const headers=readFileSync(new URL('../_headers',import.meta.url),'utf8');
-  assert.match(headers, /img-src[^;]*https:\/\/commons\.wikimedia\.org/);
-  assert.match(headers, /img-src[^;]*https:\/\/upload\.wikimedia\.org/);
+  assert.match(headers, /img-src 'self' data:;/);
+  assert.doesNotMatch(headers, /img-src[^;]*wikimedia\.org/);
 });
