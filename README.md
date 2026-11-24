@@ -6,6 +6,12 @@
 
 > **This is a portfolio demonstration, not a production rental management system.** Vehicles, bookings, names, addresses, and revenue figures are fictitious. Records live in the visitor's browser (`localStorage`). No payments, real-time synchronization, emails, or actual rental inventory integrations are provided.
 
+## Live interactive demo
+
+**[Open KODYRA FleetOps](https://kodyra-fleetops-live.elghoualizakariae.workers.dev/)** — hosted as a static application on Cloudflare Workers. Each visitor gets fictional browser-local demo data; this is not a shared production database.
+
+Publishing currently uses the connected Cloudflare API. GitHub Actions checks the code, but GitHub pushes do not automatically deploy to Cloudflare until CI/CD is separately configured. The other Cloudflare Pages project has not been deployed.
+
 ## Try it
 
 Run locally using either Python or another static HTTP server:
