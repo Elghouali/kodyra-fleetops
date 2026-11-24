@@ -1,0 +1,581 @@
+{
+  "version": 1,
+  "seededAt": "2026-11-24",
+  "vehicles": [
+    {
+      "id": "V01",
+      "make": "Dacia",
+      "model": "Duster",
+      "plate": "CX-1183-A",
+      "category": "SUV",
+      "dayRate": 420,
+      "status": "ready",
+      "tint": "#D9E5E9"
+    },
+    {
+      "id": "V02",
+      "make": "Renault",
+      "model": "Clio 5",
+      "plate": "CX-9241-B",
+      "category": "Economy",
+      "dayRate": 290,
+      "status": "ready",
+      "tint": "#E9E9E6"
+    },
+    {
+      "id": "V03",
+      "make": "Hyundai",
+      "model": "Tucson",
+      "plate": "CX-7702-C",
+      "category": "SUV",
+      "dayRate": 510,
+      "status": "ready",
+      "tint": "#D9E0D8"
+    },
+    {
+      "id": "V04",
+      "make": "Peugeot",
+      "model": "208",
+      "plate": "CX-3361-D",
+      "category": "Economy",
+      "dayRate": 310,
+      "status": "ready",
+      "tint": "#E2DFE9"
+    },
+    {
+      "id": "V05",
+      "make": "Volkswagen",
+      "model": "Golf 8",
+      "plate": "CX-4772-E",
+      "category": "Premium",
+      "dayRate": 540,
+      "status": "ready",
+      "tint": "#DDE5EF"
+    },
+    {
+      "id": "V06",
+      "make": "Kia",
+      "model": "Sportage",
+      "plate": "CX-0119-F",
+      "category": "SUV",
+      "dayRate": 480,
+      "status": "ready",
+      "tint": "#E8E0D5"
+    },
+    {
+      "id": "V07",
+      "make": "Toyota",
+      "model": "Yaris",
+      "plate": "CX-1181-G",
+      "category": "Economy",
+      "dayRate": 300,
+      "status": "ready",
+      "tint": "#E3E9DC"
+    },
+    {
+      "id": "V08",
+      "make": "Mercedes",
+      "model": "C-Class",
+      "plate": "CX-8884-H",
+      "category": "Luxury",
+      "dayRate": 950,
+      "status": "ready",
+      "tint": "#DDE0E5"
+    },
+    {
+      "id": "V09",
+      "make": "Skoda",
+      "model": "Octavia",
+      "plate": "CX-4412-I",
+      "category": "Premium",
+      "dayRate": 470,
+      "status": "maintenance",
+      "tint": "#E9E3DA"
+    },
+    {
+      "id": "V10",
+      "make": "Citroën",
+      "model": "C3",
+      "plate": "CX-6599-J",
+      "category": "Economy",
+      "dayRate": 275,
+      "status": "ready",
+      "tint": "#E8DDE5"
+    }
+  ],
+  "customers": [
+    {
+      "id": "C01",
+      "name": "Amina Benali",
+      "email": "amina.benali@example.com",
+      "phone": "+212 600 000 101"
+    },
+    {
+      "id": "C02",
+      "name": "Youssef Amrani",
+      "email": "youssef.amrani@example.com",
+      "phone": "+212 600 000 102"
+    },
+    {
+      "id": "C03",
+      "name": "Sofia Martins",
+      "email": "sofia.martins@example.com",
+      "phone": "+212 600 000 103"
+    },
+    {
+      "id": "C04",
+      "name": "Adam El Idrissi",
+      "email": "adam.idrissi@example.com",
+      "phone": "+212 600 000 104"
+    },
+    {
+      "id": "C05",
+      "name": "Léa Dubois",
+      "email": "lea.dubois@example.com",
+      "phone": "+212 600 000 105"
+    },
+    {
+      "id": "C06",
+      "name": "Omar Haddad",
+      "email": "omar.haddad@example.com",
+      "phone": "+212 600 000 106"
+    },
+    {
+      "id": "C07",
+      "name": "Nora Saidi",
+      "email": "nora.saidi@example.com",
+      "phone": "+212 600 000 107"
+    },
+    {
+      "id": "C08",
+      "name": "Lucas Pereira",
+      "email": "lucas.pereira@example.com",
+      "phone": "+212 600 000 108"
+    },
+    {
+      "id": "C09",
+      "name": "Salma Alaoui",
+      "email": "salma.alaoui@example.com",
+      "phone": "+212 600 000 109"
+    },
+    {
+      "id": "C10",
+      "name": "Daniel Smith",
+      "email": "daniel.smith@example.com",
+      "phone": "+212 600 000 110"
+    },
+    {
+      "id": "C11",
+      "name": "Ines Berrada",
+      "email": "ines.berrada@example.com",
+      "phone": "+212 600 000 111"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "BK-1042",
+      "vehicleId": "V01",
+      "customerId": "C01",
+      "pickup": "2026-11-21",
+      "dropoff": "2026-11-27",
+      "status": "active",
+      "options": {
+        "gps": true,
+        "childSeat": true,
+        "delivery": true
+      },
+      "total": 3060,
+      "createdAt": "2026-11-18"
+    },
+    {
+      "id": "BK-1043",
+      "vehicleId": "V02",
+      "customerId": "C03",
+      "pickup": "2026-11-23",
+      "dropoff": "2026-11-29",
+      "status": "active",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 1740,
+      "createdAt": "2026-11-20"
+    },
+    {
+      "id": "BK-1044",
+      "vehicleId": "V03",
+      "customerId": "C02",
+      "pickup": "2026-11-25",
+      "dropoff": "2026-11-29",
+      "status": "confirmed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 2040,
+      "createdAt": "2026-11-22"
+    },
+    {
+      "id": "BK-1045",
+      "vehicleId": "V05",
+      "customerId": "C05",
+      "pickup": "2026-11-26",
+      "dropoff": "2026-11-30",
+      "status": "confirmed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 2160,
+      "createdAt": "2026-11-23"
+    },
+    {
+      "id": "BK-1046",
+      "vehicleId": "V06",
+      "customerId": "C04",
+      "pickup": "2026-11-27",
+      "dropoff": "2026-12-01",
+      "status": "confirmed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": true
+      },
+      "total": 2070,
+      "createdAt": "2026-11-24"
+    },
+    {
+      "id": "BK-1047",
+      "vehicleId": "V08",
+      "customerId": "C10",
+      "pickup": "2026-11-25",
+      "dropoff": "2026-11-27",
+      "status": "confirmed",
+      "options": {
+        "gps": true,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 1980,
+      "createdAt": "2026-11-22"
+    },
+    {
+      "id": "BK-1048",
+      "vehicleId": "V04",
+      "customerId": "C08",
+      "pickup": "2026-11-30",
+      "dropoff": "2026-12-03",
+      "status": "confirmed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 930,
+      "createdAt": "2026-11-27"
+    },
+    {
+      "id": "BK-1049",
+      "vehicleId": "V07",
+      "customerId": "C06",
+      "pickup": "2026-11-29",
+      "dropoff": "2026-12-01",
+      "status": "confirmed",
+      "options": {
+        "gps": false,
+        "childSeat": true,
+        "delivery": false
+      },
+      "total": 650,
+      "createdAt": "2026-11-26"
+    },
+    {
+      "id": "BK-1050",
+      "vehicleId": "V10",
+      "customerId": "C11",
+      "pickup": "2026-12-02",
+      "dropoff": "2026-12-06",
+      "status": "pending",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": true
+      },
+      "total": 1250,
+      "createdAt": "2026-11-29"
+    },
+    {
+      "id": "BK-1051",
+      "vehicleId": "V01",
+      "customerId": "C07",
+      "pickup": "2026-12-04",
+      "dropoff": "2026-12-08",
+      "status": "confirmed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 1680,
+      "createdAt": "2026-12-01"
+    },
+    {
+      "id": "BK-1052",
+      "vehicleId": "V02",
+      "customerId": "C09",
+      "pickup": "2026-12-06",
+      "dropoff": "2026-12-11",
+      "status": "confirmed",
+      "options": {
+        "gps": true,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 1650,
+      "createdAt": "2026-12-03"
+    },
+    {
+      "id": "BK-1053",
+      "vehicleId": "V03",
+      "customerId": "C01",
+      "pickup": "2026-11-09",
+      "dropoff": "2026-11-12",
+      "status": "completed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 1530,
+      "createdAt": "2026-11-06"
+    },
+    {
+      "id": "BK-1054",
+      "vehicleId": "V04",
+      "customerId": "C05",
+      "pickup": "2026-11-01",
+      "dropoff": "2026-11-04",
+      "status": "completed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": true
+      },
+      "total": 1080,
+      "createdAt": "2026-10-29"
+    },
+    {
+      "id": "BK-1055",
+      "vehicleId": "V05",
+      "customerId": "C10",
+      "pickup": "2026-11-16",
+      "dropoff": "2026-11-20",
+      "status": "completed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 2160,
+      "createdAt": "2026-11-13"
+    },
+    {
+      "id": "BK-1056",
+      "vehicleId": "V06",
+      "customerId": "C02",
+      "pickup": "2026-11-12",
+      "dropoff": "2026-11-16",
+      "status": "completed",
+      "options": {
+        "gps": false,
+        "childSeat": true,
+        "delivery": false
+      },
+      "total": 2020,
+      "createdAt": "2026-11-09"
+    },
+    {
+      "id": "BK-1057",
+      "vehicleId": "V07",
+      "customerId": "C03",
+      "pickup": "2026-11-18",
+      "dropoff": "2026-11-22",
+      "status": "completed",
+      "options": {
+        "gps": true,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 1360,
+      "createdAt": "2026-11-15"
+    },
+    {
+      "id": "BK-1058",
+      "vehicleId": "V08",
+      "customerId": "C08",
+      "pickup": "2026-11-07",
+      "dropoff": "2026-11-10",
+      "status": "completed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": true
+      },
+      "total": 3000,
+      "createdAt": "2026-11-04"
+    },
+    {
+      "id": "BK-1059",
+      "vehicleId": "V10",
+      "customerId": "C07",
+      "pickup": "2026-11-14",
+      "dropoff": "2026-11-17",
+      "status": "completed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 825,
+      "createdAt": "2026-11-11"
+    },
+    {
+      "id": "BK-1060",
+      "vehicleId": "V01",
+      "customerId": "C04",
+      "pickup": "2026-10-27",
+      "dropoff": "2026-10-30",
+      "status": "completed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 1260,
+      "createdAt": "2026-10-24"
+    },
+    {
+      "id": "BK-1061",
+      "vehicleId": "V02",
+      "customerId": "C01",
+      "pickup": "2026-10-12",
+      "dropoff": "2026-10-15",
+      "status": "completed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 870,
+      "createdAt": "2026-10-09"
+    },
+    {
+      "id": "BK-1062",
+      "vehicleId": "V03",
+      "customerId": "C10",
+      "pickup": "2026-10-06",
+      "dropoff": "2026-10-09",
+      "status": "completed",
+      "options": {
+        "gps": true,
+        "childSeat": false,
+        "delivery": true
+      },
+      "total": 1800,
+      "createdAt": "2026-10-03"
+    },
+    {
+      "id": "BK-1063",
+      "vehicleId": "V04",
+      "customerId": "C11",
+      "pickup": "2026-09-13",
+      "dropoff": "2026-09-17",
+      "status": "completed",
+      "options": {
+        "gps": false,
+        "childSeat": true,
+        "delivery": false
+      },
+      "total": 1340,
+      "createdAt": "2026-09-10"
+    },
+    {
+      "id": "BK-1064",
+      "vehicleId": "V06",
+      "customerId": "C09",
+      "pickup": "2026-08-29",
+      "dropoff": "2026-09-02",
+      "status": "completed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 1920,
+      "createdAt": "2026-08-26"
+    },
+    {
+      "id": "BK-1065",
+      "vehicleId": "V05",
+      "customerId": "C05",
+      "pickup": "2026-08-02",
+      "dropoff": "2026-08-06",
+      "status": "completed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 2160,
+      "createdAt": "2026-07-30"
+    },
+    {
+      "id": "BK-1066",
+      "vehicleId": "V01",
+      "customerId": "C02",
+      "pickup": "2026-07-02",
+      "dropoff": "2026-07-07",
+      "status": "completed",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": true
+      },
+      "total": 2250,
+      "createdAt": "2026-06-29"
+    },
+    {
+      "id": "BK-1067",
+      "vehicleId": "V08",
+      "customerId": "C10",
+      "pickup": "2026-06-05",
+      "dropoff": "2026-06-07",
+      "status": "completed",
+      "options": {
+        "gps": true,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 1980,
+      "createdAt": "2026-06-02"
+    },
+    {
+      "id": "BK-1068",
+      "vehicleId": "V04",
+      "customerId": "C04",
+      "pickup": "2026-11-10",
+      "dropoff": "2026-11-14",
+      "status": "cancelled",
+      "options": {
+        "gps": false,
+        "childSeat": false,
+        "delivery": false
+      },
+      "total": 1240,
+      "createdAt": "2026-11-07"
+    }
+  ]
+}
