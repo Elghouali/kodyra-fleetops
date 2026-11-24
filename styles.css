@@ -3,7 +3,7 @@
 .promo-link{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:800;color:#245ac4;margin-top:13px}.promo-link svg{width:13px;height:13px}.booking-actions{display:flex;gap:9px;margin-top:5px}.cancel-link{color:#bd6271}
 
 .vehicle-photo{display:block;width:100%;height:auto;border:0;object-fit:cover}
-.vehicle-photo-card{width:100%;max-width:255px;height:128px;object-fit:cover;filter:drop-shadow(0 18px 28px rgba(15,35,61,.16))}
+.vehicle-photo-card{width:100%;max-width:none;height:138px;object-fit:cover;filter:none}
 .vehicle-photo-mini{width:72px;height:54px;border-radius:12px;object-fit:cover;box-shadow:0 6px 16px rgba(26,47,82,.12);border:1px solid rgba(255,255,255,.72);background:#eef3fb}
 .vehicle-photo-table{width:70px;height:46px;border-radius:12px;object-fit:cover;box-shadow:0 6px 18px rgba(26,47,82,.1);background:#eef3fb;flex:none}
 .vehicle-cell{display:flex;align-items:center;gap:12px;min-width:190px}
@@ -11,7 +11,7 @@
 .vehicle-fallback svg{width:40px;height:28px}
 .vehicle-visual{overflow:hidden}
 .fleet-row{grid-template-columns:72px 1fr auto;gap:14px}
-@media(max-width:580px){.vehicle-photo-mini{width:64px;height:48px}.vehicle-photo-table{width:62px;height:42px}.vehicle-photo-card{max-width:230px;height:118px}.vehicle-cell{min-width:175px}}
+@media(max-width:580px){.vehicle-photo-mini{width:64px;height:48px}.vehicle-photo-table{width:62px;height:42px}.vehicle-photo-card{max-width:none;height:138px}.vehicle-cell{min-width:175px}}
 
 /* Business-oriented fleet detail UI: useful facts first, no decorative photo gallery. */
 .vehicle-title-row{display:flex;justify-content:space-between;align-items:center;gap:8px}

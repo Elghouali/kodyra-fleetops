@@ -23,6 +23,13 @@ test('vehicle detail UX keeps operational controls and honest image labels', () 
   assert.match(source, /data-action="vehicle-details"/);
   assert.match(source, /data-action="toggle-maintenance"/);
   assert.match(source, /data-action="new-booking"/);
-  assert.match(source, /Images are illustrative, not verified photographs/);
+  assert.match(source, /The photograph shows a representative model, not this particular vehicle/);
+  assert.match(source, /Illustrative fallback preview/);
   assert.match(source, /Current \/ next rental/);
+});
+
+test('photographic thumbnails are permitted by the Content Security Policy', () => {
+  const headers=readFileSync(new URL('../_headers',import.meta.url),'utf8');
+  assert.match(headers, /img-src[^;]*https:\/\/commons\.wikimedia\.org/);
+  assert.match(headers, /img-src[^;]*https:\/\/upload\.wikimedia\.org/);
 });
