@@ -2,15 +2,9 @@
 
 **A working engineering showcase for rental-agency operations.** A premium, mobile-responsive, zero-backend demo built with standard browser modules, modern CSS, and pure JavaScript domain rules.
 
-![FleetOps dashboard](assets/desktop-preview.webp)
+![FleetOps dashboard](assets/desktop-preview.png)
 
 > **This is a portfolio demonstration, not a production rental management system.** Vehicles, bookings, names, addresses, and revenue figures are fictitious. Records live in the visitor's browser (`localStorage`). No payments, real-time synchronization, emails, or actual rental inventory integrations are provided.
-
-## Live interactive demo
-
-**[Open KODYRA FleetOps](https://kodyra-fleetops-live.elghoualizakariae.workers.dev/)** — hosted as a static application on Cloudflare Workers. Each visitor gets fictional browser-local demo data; this is not a shared production database.
-
-Publishing currently uses the connected Cloudflare API. GitHub Actions checks the code, but GitHub pushes do not automatically deploy to Cloudflare until CI/CD is separately configured. The other Cloudflare Pages project has not been deployed.
 
 ## Try it
 
@@ -72,7 +66,7 @@ src/app.js                 Browser UI and event-driven application controller
 src/domain.js              Pure booking, pricing, status, analytics and CSV functions
 src/demo.js                Deterministic fictitious records relative to browser date
 src/storage.js             Local persistence and schema guard
-assets/desktop-preview.webp  Browser-verified demo screenshot
+assets/desktop-preview.png  Browser-verified demo screenshot
 assets/favicon.svg         Original vector mark
 scripts/build.mjs          Zero-dependency build to dist/
 tests/domain.test.js       Node built-in test runner
@@ -129,3 +123,9 @@ This product is intentionally a *working demonstration* rather than a production
 A flagship software + data engineering portfolio example for [KODYRA](https://github.com/Elghouali). Contact: elghoualizakariae@gmail.com.
 
 *No real client outcomes or production deployments are claimed.*
+
+## Vehicle profiles for agency discovery
+
+FleetOps now provides illustrative vehicle images, plausible **fictional** model-year/mileage/fuel/gearbox details, a vehicle detail view, maintenance actions, and a direct route to a reservation. The demo is designed to support a discovery conversation about real agency workflows; it is **not** evidence that any particular rental vehicle or customer exists. Photos/previews are not verified photographs of real inventory.
+
+The detail fields are optional for previously saved browser demo data, while seeded vehicles contain complete examples. The app continues to store data locally in the browser; a production multi-user system needs authentication, shared storage, backup, auditability, security testing and deployment support.

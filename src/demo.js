@@ -19,7 +19,21 @@ const vehicles = [
   ['V08','Mercedes','C-Class','CX-8884-H','Luxury',950,'ready','#DDE0E5'],
   ['V09','Skoda','Octavia','CX-4412-I','Premium',470,'maintenance','#E9E3DA'],
   ['V10','Citroën','C3','CX-6599-J','Economy',275,'ready','#E8DDE5'],
-].map(([id,make,model,plate,category,dayRate,status,tint]) => ({ id,make,model,plate,category,dayRate,status,tint }));
+].map(([id,make,model,plate,category,dayRate,status,tint]) => ({
+  id,make,model,plate,category,dayRate,status,tint,
+  ...{
+    V01:{year:2023,fuel:'Diesel',transmission:'Manual',seats:5,mileageKm:51280},
+    V02:{year:2024,fuel:'Petrol',transmission:'Automatic',seats:5,mileageKm:28450},
+    V03:{year:2023,fuel:'Diesel',transmission:'Automatic',seats:5,mileageKm:43870},
+    V04:{year:2024,fuel:'Petrol',transmission:'Manual',seats:5,mileageKm:32980},
+    V05:{year:2023,fuel:'Petrol',transmission:'Automatic',seats:5,mileageKm:36510},
+    V06:{year:2023,fuel:'Hybrid',transmission:'Automatic',seats:5,mileageKm:29800},
+    V07:{year:2024,fuel:'Hybrid',transmission:'Automatic',seats:5,mileageKm:18430},
+    V08:{year:2022,fuel:'Diesel',transmission:'Automatic',seats:5,mileageKm:55230},
+    V09:{year:2022,fuel:'Diesel',transmission:'Automatic',seats:5,mileageKm:68340},
+    V10:{year:2023,fuel:'Petrol',transmission:'Manual',seats:5,mileageKm:40780},
+  }[id]
+}));
 
 const customers = [
   ['C01','Amina Benali','amina.benali@example.com','+212 600 000 101'],
