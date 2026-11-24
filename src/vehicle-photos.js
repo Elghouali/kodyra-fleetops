@@ -69,5 +69,5 @@ export function demoVehiclePhoto(vehicle) {
   const sample=DEMO_PHOTOS[vehicle.id];
   if (!sample || vehicle.make + " " + vehicle.model !== sample.model) return null;
   const encoded=encodeURIComponent(sample.file.replaceAll(" ", "_"));
-  return {src:`https://commons.wikimedia.org/wiki/Special:Redirect/file/${encoded}?width=640`,source:sample.source,license:sample.license};
+  return {src:`https://commons.wikimedia.org/wiki/Special:Redirect/file/${encoded}?width=960`,source:sample.source,license:sample.license};
 }

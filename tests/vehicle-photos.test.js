@@ -10,7 +10,7 @@ test('all ten seeded cars receive Commons photographs from CC0 sources', () => {
   for(const vehicle of vehicles){
     const photo=demoVehiclePhoto(vehicle);
     assert.ok(photo?.src.startsWith('https://commons.wikimedia.org/wiki/Special:Redirect/file/'),vehicle.id);
-    assert.match(photo.src,/\?width=640$/);
+    assert.match(photo.src,/\?width=960$/);
     assert.match(photo.source,/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);
     assert.equal(photo.license,'CC0 1.0');
   }
