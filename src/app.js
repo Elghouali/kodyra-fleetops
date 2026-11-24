@@ -1,6 +1,7 @@
 import { formatMoney, quoteRental, generateBooking, updateBookingStatus, metrics, monthSeries, bookingCsv, hasBookingConflict, monthWindow, rentalDays } from './domain.js';
 import { todayLocal, offsetDay } from './demo.js';
 import { loadData, saveData, resetData } from './storage.js';
+import { demoVehiclePhoto } from './vehicle-photos.js';
 
 let db = loadData();
 let page = 'overview';
@@ -67,8 +68,11 @@ function vehicleImageUrl(vehicle) {
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 }
 function vehiclePhoto(vehicle, variant='card') {
-  const label = `Illustrative ${vehicle?.make || 'Demo'} ${vehicle?.model || 'Vehicle'} preview`;
-  return `<img class="vehicle-photo vehicle-photo-${variant}" src="${vehicleImageUrl(vehicle)}" alt="${h(label)}" loading="lazy" decoding="async" />`;
+  const photo = demoVehiclePhoto(vehicle);
+  const label = `${vehicle?.make || 'Demo'} ${vehicle?.model || 'Vehicle'}`;
+  const alt = photo ? `Representative photograph of ${label}, not the demo vehicle` : `Illustrative preview of ${label}`;
+  const fallbackAttr = photo ? ` data-photo-fallback="${h(vehicle?.id)}"` : '';
+  return `<img class="vehicle-photo vehicle-photo-${variant}" src="${h(photo?.src || vehicleImageUrl(vehicle))}" alt="${h(alt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer"${fallbackAttr} />`;
 }
 function tag(s) {return `<span class="tag tag-${h(s)}">${h(titleCase(s))}</span>`;}
 const btn = (label,ic,action,primary=false) => `<button type="button" data-action="${action}" class="btn ${primary?'btn-primary':''}">${icon(ic)}${label}</button>`;
@@ -164,7 +168,7 @@ function vehicleDetailsModal(vehicleId){
  const details=vehicleSpecs(v).map(([label,val])=>`<div class="detail-spec"><span>${h(label)}</span><strong>${val===null||val===undefined?'Not recorded':h(String(val))}</strong></div>`).join('');
  const availability=status==='maintenance'?'Currently in maintenance':status==='active'?'Currently on rental':'Available today';
  const next=upcoming.length?`<div class="next-booking"><strong>Current / next rental</strong><span>${h(dateLabel(upcoming[0].pickup))} – ${h(dateLabel(upcoming[0].dropoff))}</span></div>`:'<div class="next-booking"><strong>Upcoming reservations</strong><span>No scheduled rental in this demo.</span></div>';
- const content=`<div class="detail-photo-wrap" style="--tint:${h(v.tint)}">${vehiclePhoto(v,'detail')}<span class="detail-photo-note">Illustrative vehicle preview</span></div><div class="detail-top"><div><div class="detail-eyebrow">${h(v.category)} · ${h(v.plate)}</div><div class="detail-status">${tag(status)} <span>${h(availability)}</span></div></div><strong class="detail-rate">${formatMoney(v.dayRate)} <small>/ day</small></strong></div><div class="detail-spec-grid">${details}</div>${next}<p class="detail-disclaimer">All vehicle details and reservations are fictional demo records. Images are illustrative, not verified photographs of this vehicle.</p>`;
+ const content=`<div class="detail-photo-wrap" style="--tint:${h(v.tint)}">${vehiclePhoto(v,'detail')}<span class="detail-photo-note">${demoVehiclePhoto(v)?'Representative model photograph':'Illustrative vehicle preview'}</span></div><div class="detail-top"><div><div class="detail-eyebrow">${h(v.category)} · ${h(v.plate)}</div><div class="detail-status">${tag(status)} <span>${h(availability)}</span></div></div><strong class="detail-rate">${formatMoney(v.dayRate)} <small>/ day</small></strong></div><div class="detail-spec-grid">${details}</div>${next}<p class="detail-disclaimer">All vehicle details and reservations are fictional demo records. ${demoVehiclePhoto(v)?`The photograph shows a representative model, not this particular vehicle. <a href="${h(demoVehiclePhoto(v).source)}" target="_blank" rel="noopener noreferrer">View photo source (CC0)</a>.`:'The vehicle illustration is a placeholder, not a photograph.'}</p>`;
  const action=status==='maintenance'?`<span class="detail-maintenance-note">Bookings unavailable while in maintenance</span>`:`<button type="button" class="btn btn-primary" data-action="new-booking" data-id="${h(v.id)}">${icon('calendar')} New reservation</button>`;
  const maintenance=`<button type="button" class="btn" data-action="toggle-maintenance" data-id="${h(v.id)}">${v.status==='maintenance'?'Restore to service':'Set maintenance'}</button>`;
  modal(`${h(v.make)} ${h(v.model)}`,content,`<button class="btn" data-action="close-modal">Close</button>${maintenance}${action}`);
@@ -213,4 +217,14 @@ document.addEventListener('submit',e=>{
  }
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&openModal)closeModal();});
+document.addEventListener('error', event => {
+  const img=event.target;
+  if (!(img instanceof HTMLImageElement) || !img.hasAttribute('data-photo-fallback')) return;
+  const vehicle=vehicleById(img.getAttribute('data-photo-fallback'));
+  img.removeAttribute('data-photo-fallback');
+  if (vehicle) {
+    img.src=vehicleImageUrl(vehicle);
+    img.alt=`Illustrative fallback preview of ${vehicle.make} ${vehicle.model}`;
+  }
+}, true);
 renderShell();
