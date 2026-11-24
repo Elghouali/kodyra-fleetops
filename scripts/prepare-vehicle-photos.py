@@ -30,13 +30,16 @@ for key,item in manifest.items():
     raw=fetch(url)
     with Image.open(io.BytesIO(raw)) as original:
         im=ImageOps.exif_transpose(original).convert('RGB')
-        im.thumbnail((480,330),Image.Resampling.LANCZOS)
-        for quality in (82,72,62,52,42,32):
-            out=io.BytesIO()
-            im.save(out,format='JPEG',quality=quality,optimize=True)
-            if out.tell()<=11000: break
-        data=out.getvalue()
-        if len(data)>18000: raise RuntimeError('Optimized file too large '+key)
+        im.thumbnail((440,300),Image.Resampling.LANCZOS)
+        while True:
+            for quality in (85,78,70,62,54,46,38):
+                out=io.BytesIO()
+                im.save(out,format='JPEG',quality=quality,optimize=True,progressive=True)
+                if out.tell()<=10000: break
+            data=out.getvalue()
+            if len(data)<=10000: break
+            if min(im.size)<130: raise RuntimeError('Cannot optimize '+key)
+            im.thumbnail((int(im.width*.85),int(im.height*.85)),Image.Resampling.LANCZOS)
         if min(im.size)<100: raise RuntimeError('Image unexpectedly small '+key)
     (dest/(key+'.jpg')).write_bytes(data)
     (dest/(key+'.base64')).write_text(base64.b64encode(data).decode('ascii')+'\n',encoding='ascii')
